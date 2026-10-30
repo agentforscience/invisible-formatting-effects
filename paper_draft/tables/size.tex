@@ -1,0 +1,16 @@
+\begin{table}[t]
+    \centering
+    \small
+    \begin{tabular}{@{}lccc@{}}
+        \toprule
+        \textbf{Metric} & \textbf{Small ($<$3B)} & \textbf{Large ($\geq$3B)} & \textbf{Ratio small/large} \\
+        \midrule
+        Classification label flip (all 11 models) & 7.50 & 3.38 & {\bf 2.22} \ci{2.03}{2.41} \\
+        Classification label flip (\qwentwo only) & 7.49 & 2.60 & {\bf 2.88} \ci{2.55}{3.32} \\
+        Code changed, excess over control & 27.4 & 30.8 & 0.89 \ci{0.84}{0.94} \\
+        Code pass/fail flip & 5.51 & 4.83 & 1.14 \ci{0.96}{1.37} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Effect of model size (\%). Ratios use a paired bootstrap over items with 95\% CIs. Small models are 2--3$\times$ more label-sensitive (bold), but they are not more sensitive on code. The \qwentwo-only row compares 0.5B/1.5B with 3B/7B/14B.}
+    \label{tab:size}
+\end{table}

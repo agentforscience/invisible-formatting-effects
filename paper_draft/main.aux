@@ -1,0 +1,128 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\bibstyle{plainnat}
+\citation{sclar2024quantifying}
+\citation{mizrahi2024state}
+\citation{zhuo2024prosa}
+\citation{belinkov2018synthetic,pruthi2019combating,wang2021textflint}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\citation{zhao2021calibrate}
+\citation{lu2022fantastically}
+\citation{sclar2024quantifying}
+\citation{mizrahi2024state}
+\citation{zhuo2024prosa}
+\citation{belinkov2018synthetic}
+\citation{pruthi2019combating}
+\citation{wang2021textflint}
+\citation{sennrich2016neural,radford2019language}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{2}{Related Work}{section.2}{}}
+\citation{kwon2023efficient}
+\citation{atil2024llm}
+\citation{wang2018glue}
+\citation{socher2013recursive}
+\citation{zhang2015character}
+\citation{clark2019boolq}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The ten invisible formatting edits plus the identical-prompt control. ``Prose only'' means the edit touches the instruction, docstrings and comments but never code tokens or doctest lines, so programs stay valid.\relax }}{3}{table.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:perturbations}{{1}{3}{The ten invisible formatting edits plus the identical-prompt control. ``Prose only'' means the edit touches the instruction, docstrings and comments but never code tokens or doctest lines, so programs stay valid.\relax }{table.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Method}{3}{section.3}\protected@file@percent }
+\newlabel{sec:method}{{3}{3}{Method}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Problem formulation}{3}{subsection.3.1}\protected@file@percent }
+\newlabel{eq:div}{{1}{3}{Problem formulation}{equation.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Perturbations}{3}{subsection.3.2}\protected@file@percent }
+\citation{chen2021evaluating}
+\citation{austin2021program}
+\citation{qwen2025qwen25}
+\citation{yang2025qwen3}
+\citation{grattafiori2024llama3}
+\citation{lin2024awq}
+\citation{kwon2023efficient}
+\citation{holm1979simple}
+\citation{liang1986longitudinal}
+\citation{seabold2010statsmodels}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Tasks and models}{4}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Metrics}{4}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Statistical analysis}{4}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Results}{4}{section.4}\protected@file@percent }
+\newlabel{sec:results}{{4}{4}{Results}{section.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Divergence from the canonical output (\%), averaged over items, models and conditions, with bootstrap 95\% CIs over items. Every edit family is far above the identical-prompt control, and whitespace (bold) exceeds punctuation on every metric. For classification flips, the punctuation $-$ whitespace difference is $-4.9$\,pp\xspace  {\relax \fontsize  {7}{8}\selectfont  [$-5.2$, $-4.6$]}.\relax }}{5}{table.caption.3}\protected@file@percent }
+\newlabel{tab:overall}{{2}{5}{Divergence from the canonical output (\%), averaged over items, models and conditions, with bootstrap 95\% CIs over items. Every edit family is far above the identical-prompt control, and whitespace (bold) exceeds punctuation on every metric. For classification flips, the punctuation $-$ whitespace difference is $-4.9$\pp \ci {$-5.2$}{$-4.6$}.\relax }{table.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Divergence per edit, pooled over 11 models, with bootstrap 95\% CIs. {\em  (Left)}classification label flips. {\em  (Center)}code text changes. {\em  (Right)}code pass/fail flips. Blue bars are whitespace edits, orange bars punctuation edits, and grey is the identical-prompt control. Labels above the bars give $\Delta $tok\xspace  , the mean number of changed prompt tokens. Every whitespace edit except \texttt  {trailing_newlines} exceeds every punctuation edit on label and pass/fail flips.\relax }}{5}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:per_condition}{{1}{5}{Divergence per edit, pooled over 11 models, with bootstrap 95\% CIs. \figleft classification label flips. \figcenter code text changes. \figright code pass/fail flips. Blue bars are whitespace edits, orange bars punctuation edits, and grey is the identical-prompt control. Labels above the bars give \dtok , the mean number of changed prompt tokens. Every whitespace edit except \cond {trailing_newlines} exceeds every punctuation edit on label and pass/fail flips.\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Invisible edits change outputs far above the noise floor}{5}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:res_overall}{{4.1}{5}{Invisible edits change outputs far above the noise floor}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Per-edit results}{5}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:res_cond}{{4.2}{5}{Per-edit results}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Per-model results and model size}{5}{subsection.4.3}\protected@file@percent }
+\newlabel{sec:res_size}{{4.3}{5}{Per-model results and model size}{subsection.4.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Divergence (\%) per edit, pooled over 11 models. $\Delta $tok\xspace  is the mean number of prompt token positions changed after the chat template and tokenizer. The most disruptive edit in each column is in bold. $^*$\texttt  {ellipsis_char} applies to only 40 classification and 9 code items per model, so its CIs are very wide.\relax }}{6}{table.caption.5}\protected@file@percent }
+\newlabel{tab:per_condition}{{3}{6}{Divergence (\%) per edit, pooled over 11 models. \dtok is the mean number of prompt token positions changed after the chat template and tokenizer. The most disruptive edit in each column is in bold. $^*$\cond {ellipsis_char} applies to only 40 classification and 9 code items per model, so its CIs are very wide.\relax }{table.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Classification label-flip rate (\%) per model and edit. Llama-3.2-1B under \texttt  {nbsp} reaches 39\%, and \textsc  {Qwen2.5}\xspace  -0.5B under a single trailing \texttt  {\textbackslash n\textbackslash n} reaches 18\%. The Llama \texttt  {trailing_newlines} column is exactly 0 because Llama chat templates strip trailing whitespace, so the model never sees the edit (a placebo). Punctuation columns stay below 1\% for $\geq $7B models.\relax }}{6}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:heat}{{2}{6}{Classification label-flip rate (\%) per model and edit. Llama-3.2-1B under \cond {nbsp} reaches 39\%, and \qwentwo -0.5B under a single trailing \texttt {\textbackslash n\textbackslash n} reaches 18\%. The Llama \cond {trailing_newlines} column is exactly 0 because Llama chat templates strip trailing whitespace, so the model never sees the edit (a placebo). Punctuation columns stay below 1\% for $\geq $7B models.\relax }{figure.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Divergence (\%) per model. The horizontal rule separates small ($<$3B) from large ($\geq $3B) models. The highest value in each perturbation column is in bold. Whitespace exceeds punctuation for every model. Small models dominate classification flips, while code text changes show no size trend. Control columns show batch-position noise, which is negligible for labels but reaches 21\% of code outputs for \textsc  {Qwen3}\xspace  -0.6B.\relax }}{7}{table.caption.7}\protected@file@percent }
+\newlabel{tab:per_model}{{4}{7}{Divergence (\%) per model. The horizontal rule separates small ($<$3B) from large ($\geq $3B) models. The highest value in each perturbation column is in bold. Whitespace exceeds punctuation for every model. Small models dominate classification flips, while code text changes show no size trend. Control columns show batch-position noise, which is negligible for labels but reaches 21\% of code outputs for \qwenthree -0.6B.\relax }{table.caption.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Effect of model size (\%). Ratios use a paired bootstrap over items with 95\% CIs. Small models are 2--3$\times $ more label-sensitive (bold), but they are not more sensitive on code. The \textsc  {Qwen2.5}\xspace  -only row compares 0.5B/1.5B with 3B/7B/14B.\relax }}{7}{table.caption.8}\protected@file@percent }
+\newlabel{tab:size}{{5}{7}{Effect of model size (\%). Ratios use a paired bootstrap over items with 95\% CIs. Small models are 2--3$\times $ more label-sensitive (bold), but they are not more sensitive on code. The \qwentwo -only row compares 0.5B/1.5B with 3B/7B/14B.\relax }{table.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Task type}{7}{subsection.4.4}\protected@file@percent }
+\newlabel{sec:res_task}{{4.4}{7}{Task type}{subsection.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}What drives the effect?}{7}{subsection.4.5}\protected@file@percent }
+\newlabel{sec:res_mediators}{{4.5}{7}{What drives the effect?}{subsection.4.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Excess divergence over the control vs.\xspace  parameter count (log scale), per family. Solid lines are whitespace edits, dashed lines punctuation edits, and the dotted vertical line marks 3B. {\em  (Left)}label flips fall with size for \textsc  {Qwen2.5}\xspace  and \textsc  {Llama-3.x}\xspace  , while \textsc  {Qwen3}\xspace  peaks at 4B. {\em  (Right)}code text changes show no downward trend with size. Whitespace lies above punctuation for every family and size.\relax }}{8}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:size}{{3}{8}{Excess divergence over the control \versus parameter count (log scale), per family. Solid lines are whitespace edits, dashed lines punctuation edits, and the dotted vertical line marks 3B. \figleft label flips fall with size for \qwentwo and \llama , while \qwenthree peaks at 4B. \figright code text changes show no downward trend with size. Whitespace lies above punctuation for every family and size.\relax }{figure.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Divergence per task, averaged over edits and models. The most affected task in each row is in bold. Functional flips are similar across task kinds, while raw code text is far more volatile than labels.\relax }}{8}{table.caption.10}\protected@file@percent }
+\newlabel{tab:task}{{6}{8}{Divergence per task, averaged over edits and models. The most affected task in each row is in bold. Functional flips are similar across task kinds, while raw code text is far more volatile than labels.\relax }{table.caption.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{8}{section.5}\protected@file@percent }
+\newlabel{sec:discussion}{{5}{8}{Discussion}{section.5}{}}
+\bibdata{references}
+\bibcite{atil2024llm}{{1}{2024}{{Atil et~al.}}{{Atil, Aykent, Chittams, Fu, Passonneau, Radcliffe, Rajagopal, Sloan, Tudrej, Ture, Wu, Xu, and Baldwin}}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{9}{section.6}\protected@file@percent }
+\newlabel{sec:conclusion}{{6}{9}{Conclusion}{section.6}{}}
+\bibcite{austin2021program}{{2}{2021}{{Austin et~al.}}{{Austin, Odena, Nye, Bosma, Michalewski, Dohan, Jiang, Cai, Terry, Le, and Sutton}}}
+\bibcite{belinkov2018synthetic}{{3}{2018}{{Belinkov and Bisk}}{{}}}
+\bibcite{chen2021evaluating}{{4}{2021}{{Chen et~al.}}{{Chen, Tworek, Jun, Yuan, Pinto, et~al.}}}
+\bibcite{clark2019boolq}{{5}{2019}{{Clark et~al.}}{{Clark, Lee, Chang, Kwiatkowski, Collins, and Toutanova}}}
+\bibcite{grattafiori2024llama3}{{6}{2024}{{Grattafiori et~al.}}{{}}}
+\bibcite{holm1979simple}{{7}{1979}{{Holm}}{{}}}
+\bibcite{kwon2023efficient}{{8}{2023}{{Kwon et~al.}}{{Kwon, Li, Zhuang, Sheng, Zheng, Yu, Gonzalez, Zhang, and Stoica}}}
+\bibcite{liang1986longitudinal}{{9}{1986}{{Liang and Zeger}}{{}}}
+\bibcite{lin2024awq}{{10}{2024}{{Lin et~al.}}{{Lin, Tang, Tang, Yang, Chen, Wang, Xiao, Dang, Gan, and Han}}}
+\bibcite{lu2022fantastically}{{11}{2022}{{Lu et~al.}}{{Lu, Bartolo, Moore, Riedel, and Stenetorp}}}
+\bibcite{mizrahi2024state}{{12}{2024}{{Mizrahi et~al.}}{{Mizrahi, Kaplan, Malkin, Dror, Shahaf, and Stanovsky}}}
+\bibcite{pruthi2019combating}{{13}{2019}{{Pruthi et~al.}}{{Pruthi, Dhingra, and Lipton}}}
+\bibcite{qwen2025qwen25}{{14}{2024}{{Qwen Team}}{{}}}
+\bibcite{radford2019language}{{15}{2019}{{Radford et~al.}}{{Radford, Wu, Child, Luan, Amodei, and Sutskever}}}
+\bibcite{sclar2024quantifying}{{16}{2024}{{Sclar et~al.}}{{Sclar, Choi, Tsvetkov, and Suhr}}}
+\bibcite{seabold2010statsmodels}{{17}{2010}{{Seabold and Perktold}}{{}}}
+\bibcite{sennrich2016neural}{{18}{2016}{{Sennrich et~al.}}{{Sennrich, Haddow, and Birch}}}
+\bibcite{socher2013recursive}{{19}{2013}{{Socher et~al.}}{{Socher, Perelygin, Wu, Chuang, Manning, Ng, and Potts}}}
+\bibcite{wang2018glue}{{20}{2018}{{Wang et~al.}}{{Wang, Singh, Michael, Hill, Levy, and Bowman}}}
+\bibcite{wang2021textflint}{{21}{2021}{{Wang et~al.}}{{Wang, Liu, Gui, Zhang, et~al.}}}
+\bibcite{yang2025qwen3}{{22}{2025}{{Yang et~al.}}{{}}}
+\bibcite{zhang2015character}{{23}{2015}{{Zhang et~al.}}{{Zhang, Zhao, and LeCun}}}
+\bibcite{zhao2021calibrate}{{24}{2021}{{Zhao et~al.}}{{Zhao, Wallace, Feng, Klein, and Singh}}}
+\bibcite{zhuo2024prosa}{{25}{2024}{{Zhuo et~al.}}{{Zhuo, Zhang, Fang, Duan, Lin, and Chen}}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Additional Experimental Details}{11}{appendix.A}\protected@file@percent }
+\newlabel{app:details}{{A}{11}{Additional Experimental Details}{appendix.A}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Model checkpoints. Small models ($<$3B) are \textsc  {Qwen2.5}\xspace  -0.5B, \textsc  {Qwen2.5}\xspace  -1.5B, Llama-3.2-1B and \textsc  {Qwen3}\xspace  -0.6B.\relax }}{11}{table.caption.12}\protected@file@percent }
+\newlabel{tab:models}{{7}{11}{Model checkpoints. Small models ($<$3B) are \qwentwo -0.5B, \qwentwo -1.5B, Llama-3.2-1B and \qwenthree -0.6B.\relax }{table.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Code pass/fail flip rate (\%) per model and edit, pooled over \textsc  {HumanEval}\xspace  and \textsc  {MBPP}\xspace  . Whitespace edits produce the largest functional changes across models. The 11.1\% \texttt  {ellipsis_char} cells correspond to a single program out of 9.\relax }}{12}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:heat_code}{{4}{12}{Code pass/fail flip rate (\%) per model and edit, pooled over \humaneval and \mbpp . Whitespace edits produce the largest functional changes across models. The 11.1\% \cond {ellipsis_char} cells correspond to a single program out of 9.\relax }{figure.caption.13}{}}
+\gdef \@abspage@last{12}

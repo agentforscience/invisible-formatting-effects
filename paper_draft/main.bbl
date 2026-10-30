@@ -1,0 +1,182 @@
+\begin{thebibliography}{25}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Atil et~al.(2024)Atil, Aykent, Chittams, Fu, Passonneau, Radcliffe,
+  Rajagopal, Sloan, Tudrej, Ture, Wu, Xu, and Baldwin]{atil2024llm}
+Berk Atil, Sarp Aykent, Alexa Chittams, Lisheng Fu, Rebecca~J. Passonneau, Evan
+  Radcliffe, Guru~Rajan Rajagopal, Adam Sloan, Tomasz Tudrej, Ferhan Ture, Zhe
+  Wu, Lixinyu Xu, and Breck Baldwin.
+\newblock Non-determinism of ``deterministic'' {LLM} settings.
+\newblock \emph{arXiv preprint arXiv:2408.04667}, 2024.
+
+\bibitem[Austin et~al.(2021)Austin, Odena, Nye, Bosma, Michalewski, Dohan,
+  Jiang, Cai, Terry, Le, and Sutton]{austin2021program}
+Jacob Austin, Augustus Odena, Maxwell Nye, Maarten Bosma, Henryk Michalewski,
+  David Dohan, Ellen Jiang, Carrie Cai, Michael Terry, Quoc Le, and Charles
+  Sutton.
+\newblock Program synthesis with large language models.
+\newblock \emph{arXiv preprint arXiv:2108.07732}, 2021.
+
+\bibitem[Belinkov and Bisk(2018)]{belinkov2018synthetic}
+Yonatan Belinkov and Yonatan Bisk.
+\newblock Synthetic and natural noise both break neural machine translation.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2018.
+
+\bibitem[Chen et~al.(2021)Chen, Tworek, Jun, Yuan, Pinto,
+  et~al.]{chen2021evaluating}
+Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde de~Oliveira
+  Pinto, et~al.
+\newblock Evaluating large language models trained on code.
+\newblock \emph{arXiv preprint arXiv:2107.03374}, 2021.
+
+\bibitem[Clark et~al.(2019)Clark, Lee, Chang, Kwiatkowski, Collins, and
+  Toutanova]{clark2019boolq}
+Christopher Clark, Kenton Lee, Ming-Wei Chang, Tom Kwiatkowski, Michael
+  Collins, and Kristina Toutanova.
+\newblock {BoolQ}: Exploring the surprising difficulty of natural yes/no
+  questions.
+\newblock In \emph{Proceedings of NAACL-HLT}, 2019.
+
+\bibitem[Grattafiori et~al.(2024)]{grattafiori2024llama3}
+Aaron Grattafiori et~al.
+\newblock The {Llama} 3 herd of models.
+\newblock \emph{arXiv preprint arXiv:2407.21783}, 2024.
+
+\bibitem[Holm(1979)]{holm1979simple}
+Sture Holm.
+\newblock A simple sequentially rejective multiple test procedure.
+\newblock \emph{Scandinavian Journal of Statistics}, 6\penalty0 (2):\penalty0
+  65--70, 1979.
+
+\bibitem[Kwon et~al.(2023)Kwon, Li, Zhuang, Sheng, Zheng, Yu, Gonzalez, Zhang,
+  and Stoica]{kwon2023efficient}
+Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody~Hao Yu,
+  Joseph~E. Gonzalez, Hao Zhang, and Ion Stoica.
+\newblock Efficient memory management for large language model serving with
+  {PagedAttention}.
+\newblock In \emph{Proceedings of the 29th Symposium on Operating Systems
+  Principles (SOSP)}, 2023.
+
+\bibitem[Liang and Zeger(1986)]{liang1986longitudinal}
+Kung-Yee Liang and Scott~L. Zeger.
+\newblock Longitudinal data analysis using generalized linear models.
+\newblock \emph{Biometrika}, 73\penalty0 (1):\penalty0 13--22, 1986.
+
+\bibitem[Lin et~al.(2024)Lin, Tang, Tang, Yang, Chen, Wang, Xiao, Dang, Gan,
+  and Han]{lin2024awq}
+Ji~Lin, Jiaming Tang, Haotian Tang, Shang Yang, Wei-Ming Chen, Wei-Chen Wang,
+  Guangxuan Xiao, Xingyu Dang, Chuang Gan, and Song Han.
+\newblock {AWQ}: Activation-aware weight quantization for on-device {LLM}
+  compression and acceleration.
+\newblock In \emph{Proceedings of Machine Learning and Systems (MLSys)}, 2024.
+
+\bibitem[Lu et~al.(2022)Lu, Bartolo, Moore, Riedel, and
+  Stenetorp]{lu2022fantastically}
+Yao Lu, Max Bartolo, Alastair Moore, Sebastian Riedel, and Pontus Stenetorp.
+\newblock Fantastically ordered prompts and where to find them: Overcoming
+  few-shot prompt order sensitivity.
+\newblock In \emph{Proceedings of the 60th Annual Meeting of the Association
+  for Computational Linguistics (ACL)}, 2022.
+
+\bibitem[Mizrahi et~al.(2024)Mizrahi, Kaplan, Malkin, Dror, Shahaf, and
+  Stanovsky]{mizrahi2024state}
+Moran Mizrahi, Guy Kaplan, Dan Malkin, Rotem Dror, Dafna Shahaf, and Gabriel
+  Stanovsky.
+\newblock State of what art? {A} call for multi-prompt {LLM} evaluation.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  12:\penalty0 933--949, 2024.
+
+\bibitem[Pruthi et~al.(2019)Pruthi, Dhingra, and Lipton]{pruthi2019combating}
+Danish Pruthi, Bhuwan Dhingra, and Zachary~C. Lipton.
+\newblock Combating adversarial misspellings with robust word recognition.
+\newblock In \emph{Proceedings of the 57th Annual Meeting of the Association
+  for Computational Linguistics (ACL)}, 2019.
+
+\bibitem[{Qwen Team}(2024)]{qwen2025qwen25}
+{Qwen Team}.
+\newblock {Qwen2.5} technical report.
+\newblock \emph{arXiv preprint arXiv:2412.15115}, 2024.
+
+\bibitem[Radford et~al.(2019)Radford, Wu, Child, Luan, Amodei, and
+  Sutskever]{radford2019language}
+Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya
+  Sutskever.
+\newblock Language models are unsupervised multitask learners.
+\newblock Technical report, OpenAI, 2019.
+
+\bibitem[Sclar et~al.(2024)Sclar, Choi, Tsvetkov, and
+  Suhr]{sclar2024quantifying}
+Melanie Sclar, Yejin Choi, Yulia Tsvetkov, and Alane Suhr.
+\newblock Quantifying language models' sensitivity to spurious features in
+  prompt design or: How {I} learned to start worrying about prompt formatting.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2024.
+
+\bibitem[Seabold and Perktold(2010)]{seabold2010statsmodels}
+Skipper Seabold and Josef Perktold.
+\newblock Statsmodels: Econometric and statistical modeling with {Python}.
+\newblock In \emph{Proceedings of the 9th Python in Science Conference}, 2010.
+
+\bibitem[Sennrich et~al.(2016)Sennrich, Haddow, and Birch]{sennrich2016neural}
+Rico Sennrich, Barry Haddow, and Alexandra Birch.
+\newblock Neural machine translation of rare words with subword units.
+\newblock In \emph{Proceedings of the 54th Annual Meeting of the Association
+  for Computational Linguistics (ACL)}, 2016.
+
+\bibitem[Socher et~al.(2013)Socher, Perelygin, Wu, Chuang, Manning, Ng, and
+  Potts]{socher2013recursive}
+Richard Socher, Alex Perelygin, Jean Wu, Jason Chuang, Christopher~D. Manning,
+  Andrew Ng, and Christopher Potts.
+\newblock Recursive deep models for semantic compositionality over a sentiment
+  treebank.
+\newblock In \emph{Proceedings of the 2013 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, 2013.
+
+\bibitem[Wang et~al.(2018)Wang, Singh, Michael, Hill, Levy, and
+  Bowman]{wang2018glue}
+Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and
+  Samuel~R. Bowman.
+\newblock {GLUE}: A multi-task benchmark and analysis platform for natural
+  language understanding.
+\newblock In \emph{Proceedings of the 2018 EMNLP Workshop BlackboxNLP}, 2018.
+
+\bibitem[Wang et~al.(2021)Wang, Liu, Gui, Zhang, et~al.]{wang2021textflint}
+Xiao Wang, Qin Liu, Tao Gui, Qi~Zhang, et~al.
+\newblock {TextFlint}: Unified multilingual robustness evaluation toolkit for
+  natural language processing.
+\newblock In \emph{Proceedings of ACL-IJCNLP 2021: System Demonstrations},
+  2021.
+
+\bibitem[Yang et~al.(2025)]{yang2025qwen3}
+An~Yang et~al.
+\newblock {Qwen3} technical report.
+\newblock \emph{arXiv preprint arXiv:2505.09388}, 2025.
+
+\bibitem[Zhang et~al.(2015)Zhang, Zhao, and LeCun]{zhang2015character}
+Xiang Zhang, Junbo Zhao, and Yann LeCun.
+\newblock Character-level convolutional networks for text classification.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2015.
+
+\bibitem[Zhao et~al.(2021)Zhao, Wallace, Feng, Klein, and
+  Singh]{zhao2021calibrate}
+Zihao Zhao, Eric Wallace, Shi Feng, Dan Klein, and Sameer Singh.
+\newblock Calibrate before use: Improving few-shot performance of language
+  models.
+\newblock In \emph{International Conference on Machine Learning (ICML)}, 2021.
+
+\bibitem[Zhuo et~al.(2024)Zhuo, Zhang, Fang, Duan, Lin, and
+  Chen]{zhuo2024prosa}
+Jingming Zhuo, Songyang Zhang, Xinyu Fang, Haodong Duan, Dahua Lin, and Kai
+  Chen.
+\newblock {ProSA}: Assessing and understanding the prompt sensitivity of
+  {LLMs}.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  EMNLP 2024}, 2024.
+
+\end{thebibliography}

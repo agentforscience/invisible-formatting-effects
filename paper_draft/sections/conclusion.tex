@@ -1,0 +1,11 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We study whether invisible, meaning-preserving formatting edits change LLM outputs.
+Across 11 open models, five tasks and 239,616 greedy generations, a single invisible edit flips about 5\% of classification labels (7.5\% for models under 3B, 3.4\% for larger ones), more than 200 times the rate of an identical re-run.
+Contrary to our hypothesis, whitespace edits (no-break spaces, double spaces, CRLF, trailing spaces and newlines) are 2--5$\times$ more disruptive than typographic punctuation, and token footprint explains only part of this gap.
+Code text changes in 36\% of generations, but code correctness flips about as often as classification labels, and net accuracy barely moves.
+The key takeaway is that \emph{whitespace is not neutral}: normalize it before inference, and evaluate prompts under several formattings against an identical-prompt baseline.
+
+Future work should test frontier API models and design matched-token-budget edits that separate \emph{what} changes from \emph{how many} tokens change.
+Other directions include logit-margin analysis to test whether flips occur only when the top two labels are close, measuring distribution shift under sampling rather than greedy flips, and studying whitespace inside code bodies for code-repair tasks.

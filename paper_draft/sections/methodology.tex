@@ -1,0 +1,68 @@
+\section{Method}
+\label{sec:method}
+
+\subsection{Problem formulation}
+Let $f_m$ be model $m$ with greedy decoding and let $x_i$ be the canonical prompt for item $i$.
+A perturbation $p$ is a string edit that preserves meaning and is invisible or nearly invisible when rendered.
+It produces $p(x_i)$.
+We measure divergence relative to the model's own canonical answer, not relative to the gold label:
+\begin{equation}
+\label{eq:div}
+D_m(p) = \frac{1}{|\gI_p|}\sum_{i \in \gI_p} \1\big[g(f_m(p(x_i))) \neq g(f_m(x_i))\big],
+\end{equation}
+where $g$ maps a raw output to the quantity of interest (a parsed label, the extracted code, or a unit-test outcome) and $\gI_p = \{i : p(x_i) \neq x_i\}$ is the set of items the edit actually changes.
+The \ctrl condition sets $p$ to the identity but places the prompt at a different position in the batch, so $D_m(\ctrl)$ is the noise floor of inference.
+
+\subsection{Perturbations}
+\Tabref{tab:perturbations} lists the edits.
+The whitespace family has four edits shared by all tasks, plus no-break spaces (\cond{nbsp}) for classification or tab indentation (\cond{tabs}) for code.
+The punctuation family replaces ASCII quotes, apostrophes, dashes and ellipses with their typographic Unicode forms, separately and all together (\cond{punct_all}).
+We wrote the task instructions to contain double quotes, an apostrophe (``Don't'') and a spaced hyphen, so that every punctuation edit changes every prompt.
+The exception is \cond{ellipsis_char}, which applies only to the 40 classification and 9 code prompts that contain \texttt{...}.
+Edits that leave a prompt unchanged are excluded from all rates.
+
+Code prompts must stay valid Python.
+We apply \cond{double_space} and all punctuation edits only to natural language: the instruction, docstrings and comments, which we locate with Python's \texttt{tokenize} module.
+Doctest lines (\texttt{>>>} and their expected output) are left untouched.
+Layout edits (\cond{trailing_space}, \cond{crlf}, \cond{tabs}, \cond{trailing_newlines}) apply to the whole message.
+
+\input{tables/perturbations}
+
+\subsection{Tasks and models}
+\para{Classification.}
+We sample 400 items each (seed 42) from the GLUE~\cite{wang2018glue} validation split of \sst~\cite{socher2013recursive}, the test split of \agnews~\cite{zhang2015character} and the validation split of \boolq~\cite{clark2019boolq} (passages of at most 180 words).
+Each prompt is a zero-shot instruction such as \texttt{Classify the sentiment of the movie review below as "positive" or "negative".} followed by \texttt{Don't explain - answer with one word only.} and the input.
+We parse the earliest label keyword in the output, map synonyms, and assign \texttt{other} to anything else.
+
+\para{Code generation.}
+We use all 164 \humaneval problems~\cite{chen2021evaluating} and the 300-problem \mbpp test split~\cite{austin2021program}.
+\humaneval prompts ask the model to complete the given function and return it in one fenced block. \mbpp prompts give the task text and its three \texttt{assert} tests.
+We extract the first fenced block that contains a \texttt{def} and normalize CRLF and trailing whitespace.
+We then run the unit tests in an isolated subprocess (\texttt{python -I}, 2\,GB memory limit, 20\,s timeout).
+
+\para{Models.}
+We run 11 open instruction-tuned models: \qwentwo 0.5B, 1.5B, 3B, 7B and 14B~\cite{qwen2025qwen25}; \qwenthree 0.6B, 4B and 8B~\cite{yang2025qwen3}, with thinking mode disabled; and Llama-3.2 1B and 3B and Llama-3.1 8B~\cite{grattafiori2024llama3}.
+Most checkpoints are AWQ 4-bit~\cite{lin2024awq}. Llama-3.2-1B, \qwenthree-0.6B and \qwenthree-8B run in bf16.
+All models run in vLLM 0.32~\cite{kwon2023efficient} on NVIDIA RTX A6000 GPUs with temperature 0, using at most 12 new tokens for classification and 512 for code.
+We call the four models under 3B parameters \emph{small} and the other seven \emph{large}.
+Each model sees 19,968 prompts (1,664 items $\times$ 12 conditions), for 239,616 generations in total including a replication run.
+We had no commercial API access, so the study covers open-weight models only.
+
+\subsection{Metrics}
+We report four divergence metrics, each an instance of \eqref{eq:div}:
+(1) \textbf{label flip}, where the parsed classification label differs;
+(2) \textbf{code changed}, where the normalized extracted code differs;
+(3) \textbf{pass/fail flip}, where the unit-test outcome differs; and
+(4) \textbf{raw text changed}, where the output string differs.
+We also report accuracy against gold labels and tests.
+For every model and prompt, we apply the chat template and tokenizer and record whether the token sequence changes and how many positions differ (\dtok, computed with \texttt{difflib}).
+
+\subsection{Statistical analysis}
+All metrics are paired at the item level.
+We compute 95\% confidence intervals with a bootstrap over items (2,000 resamples). For the small/large ratio, the bootstrap resamples the same items for all models.
+For each of the 110 model $\times$ condition cells, we test perturbation against control with an exact McNemar test on discordant items and apply Holm correction~\cite{holm1979simple}.
+We fit GEE logistic models~\cite{liang1986longitudinal} with exchangeable correlation clustered by item, of the form flip $\sim$ punctuation + small + task, with and without $\log(1+\Delta\text{tok})$, using statsmodels~\cite{seabold2010statsmodels}.
+
+\para{Reproducibility checks.}
+We re-ran \qwentwo-0.5B in a separate engine process on a different GPU. All 19,968 outputs were byte-identical to the first run, so every rate for that model replicates exactly.
+Llama-3.x chat templates strip trailing whitespace from messages, so \cond{trailing_newlines} leaves their token sequence unchanged. This gives a natural placebo: an edit to the raw string that the model never sees.

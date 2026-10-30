@@ -1,0 +1,373 @@
+{
+ "family_overall": {
+  "cls_flip": {
+   "all": "all",
+   "n_items": 1200,
+   "control": 0.00022727272727272725,
+   "whitespace": 0.07066666666666667,
+   "punctuation": 0.021708333333333333,
+   "ws_excess": 0.07043939393939394,
+   "punct_excess": 0.021481060606060604,
+   "punct_minus_ws": -0.048950265151515154,
+   "pmw_lo": -0.05185984848484849,
+   "pmw_hi": -0.045867045454545466
+  },
+  "cls_text_diff": {
+   "all": "all",
+   "n_items": 1200,
+   "control": 0.001287878787878788,
+   "whitespace": 0.11657575757575758,
+   "punctuation": 0.052132575757575746,
+   "ws_excess": 0.1152878787878788,
+   "punct_excess": 0.050844696969696956,
+   "punct_minus_ws": -0.06440282954545454,
+   "pmw_lo": -0.06793939393939392,
+   "pmw_hi": -0.06081808712121214
+  },
+  "code_code_diff": {
+   "all": "all",
+   "n_items": 464,
+   "control": 0.061716300940438874,
+   "whitespace": 0.4761363636363636,
+   "punctuation": 0.22622452978056426,
+   "ws_excess": 0.4144200626959247,
+   "punct_excess": 0.1645082288401254,
+   "punct_minus_ws": -0.2500618093652038,
+   "pmw_lo": -0.2630588753918496,
+   "pmw_hi": -0.23697026841692792
+  },
+  "code_flip": {
+   "all": "all",
+   "n_items": 464,
+   "control": 0.006073667711598746,
+   "whitespace": 0.07169866771159875,
+   "punctuation": 0.02787029780564263,
+   "ws_excess": 0.065625,
+   "punct_excess": 0.021796630094043885,
+   "punct_minus_ws": -0.043906294083072096,
+   "pmw_lo": -0.04855138126959247,
+   "pmw_hi": -0.03924324059561128
+  }
+ },
+ "size": [
+  {
+   "metric": "flip",
+   "kind": "cls",
+   "excess": false,
+   "small_models": [
+    "llama3.2-1b",
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b",
+    "qwen3-0.6b"
+   ],
+   "large_models": [
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b",
+    "qwen3-4b",
+    "qwen3-8b"
+   ],
+   "small": 0.07496064814814815,
+   "large": 0.033796296296296297,
+   "ratio": 2.218013698630137,
+   "ratio_lo": 2.0333490650469663,
+   "ratio_hi": 2.414250814389939
+  },
+  {
+   "metric": "flip",
+   "kind": "cls",
+   "excess": true,
+   "small_models": [
+    "llama3.2-1b",
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b",
+    "qwen3-0.6b"
+   ],
+   "large_models": [
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b",
+    "qwen3-4b",
+    "qwen3-8b"
+   ],
+   "small": 0.07475231481481481,
+   "large": 0.03355820105820106,
+   "ratio": 2.2275423728813557,
+   "ratio_lo": 2.0497786991807274,
+   "ratio_hi": 2.4263953652403925
+  },
+  {
+   "metric": "text_diff",
+   "kind": "cls",
+   "excess": false,
+   "small_models": [
+    "llama3.2-1b",
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b",
+    "qwen3-0.6b"
+   ],
+   "large_models": [
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b",
+    "qwen3-4b",
+    "qwen3-8b"
+   ],
+   "small": 0.09465740740740741,
+   "large": 0.08383862433862432,
+   "ratio": 1.129042945946799,
+   "ratio_lo": 1.0547020155258753,
+   "ratio_hi": 1.205461325108806
+  },
+  {
+   "metric": "text_diff",
+   "kind": "cls",
+   "excess": true,
+   "small_models": [
+    "llama3.2-1b",
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b",
+    "qwen3-0.6b"
+   ],
+   "large_models": [
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b",
+    "qwen3-4b",
+    "qwen3-8b"
+   ],
+   "small": 0.09403240740740741,
+   "large": 0.08217195767195766,
+   "ratio": 1.144336949872831,
+   "ratio_lo": 1.0758576137806453,
+   "ratio_hi": 1.2171251824482963
+  },
+  {
+   "metric": "code_diff",
+   "kind": "code",
+   "excess": false,
+   "small_models": [
+    "llama3.2-1b",
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b",
+    "qwen3-0.6b"
+   ],
+   "large_models": [
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b",
+    "qwen3-4b",
+    "qwen3-8b"
+   ],
+   "small": 0.3844633022030651,
+   "large": 0.3410825465243569,
+   "ratio": 1.127185504273847,
+   "ratio_lo": 1.0834496450263702,
+   "ratio_hi": 1.1725876487382663
+  },
+  {
+   "metric": "code_diff",
+   "kind": "code",
+   "excess": true,
+   "small_models": [
+    "llama3.2-1b",
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b",
+    "qwen3-0.6b"
+   ],
+   "large_models": [
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b",
+    "qwen3-4b",
+    "qwen3-8b"
+   ],
+   "small": 0.2734719228927203,
+   "large": 0.3075234332238643,
+   "ratio": 0.8892718191450605,
+   "ratio_lo": 0.8402193796243131,
+   "ratio_hi": 0.9403673203689691
+  },
+  {
+   "metric": "flip",
+   "kind": "code",
+   "excess": false,
+   "small_models": [
+    "llama3.2-1b",
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b",
+    "qwen3-0.6b"
+   ],
+   "large_models": [
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b",
+    "qwen3-4b",
+    "qwen3-8b"
+   ],
+   "small": 0.05506016522988506,
+   "large": 0.048291256157635465,
+   "ratio": 1.1401684199341198,
+   "ratio_lo": 0.9577007807415597,
+   "ratio_hi": 1.3710401204834997
+  },
+  {
+   "metric": "flip",
+   "kind": "code",
+   "excess": true,
+   "small_models": [
+    "llama3.2-1b",
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b",
+    "qwen3-0.6b"
+   ],
+   "large_models": [
+    "llama3.1-8b",
+    "llama3.2-3b",
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b",
+    "qwen3-4b",
+    "qwen3-8b"
+   ],
+   "small": 0.045900682471264366,
+   "large": 0.04398091133004926,
+   "ratio": 1.043650099171625,
+   "ratio_lo": 0.8503400452941707,
+   "ratio_hi": 1.2752440548508672
+  }
+ ],
+ "size_qwen_only": [
+  {
+   "metric": "flip",
+   "kind": "cls",
+   "excess": false,
+   "small_models": [
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b"
+   ],
+   "large_models": [
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b"
+   ],
+   "small": 0.07494907407407407,
+   "large": 0.02601543209876543,
+   "ratio": 2.8809467315221258,
+   "ratio_lo": 2.5462139099024546,
+   "ratio_hi": 3.320068694128293
+  },
+  {
+   "metric": "flip",
+   "kind": "cls",
+   "excess": true,
+   "small_models": [
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b"
+   ],
+   "large_models": [
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b"
+   ],
+   "small": 0.07453240740740741,
+   "large": 0.02601543209876543,
+   "ratio": 2.864930596749318,
+   "ratio_lo": 2.5380078646365534,
+   "ratio_hi": 3.275941724008718
+  },
+  {
+   "metric": "code_diff",
+   "kind": "code",
+   "excess": false,
+   "small_models": [
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b"
+   ],
+   "large_models": [
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b"
+   ],
+   "small": 0.42930136494252874,
+   "large": 0.43309187420178796,
+   "ratio": 0.9912477940939314,
+   "ratio_lo": 0.9466989114762949,
+   "ratio_hi": 1.0362598428744276
+  },
+  {
+   "metric": "code_diff",
+   "kind": "code",
+   "excess": true,
+   "small_models": [
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b"
+   ],
+   "large_models": [
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b"
+   ],
+   "small": 0.3872755028735632,
+   "large": 0.3993275063856961,
+   "ratio": 0.9698192503160744,
+   "ratio_lo": 0.9139190863866681,
+   "ratio_hi": 1.0273550786969552
+  },
+  {
+   "metric": "flip",
+   "kind": "code",
+   "excess": false,
+   "small_models": [
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b"
+   ],
+   "large_models": [
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b"
+   ],
+   "small": 0.0632872365900383,
+   "large": 0.06402658045977011,
+   "ratio": 0.9884525479195886,
+   "ratio_lo": 0.7995348244739614,
+   "ratio_hi": 1.2215548776291478
+  },
+  {
+   "metric": "flip",
+   "kind": "code",
+   "excess": true,
+   "small_models": [
+    "qwen2.5-0.5b",
+    "qwen2.5-1.5b"
+   ],
+   "large_models": [
+    "qwen2.5-14b",
+    "qwen2.5-3b",
+    "qwen2.5-7b"
+   ],
+   "small": 0.06113206417624521,
+   "large": 0.0604346264367816,
+   "ratio": 1.0115403665180784,
+   "ratio_lo": 0.8065699625564203,
+   "ratio_hi": 1.252056405614607
+  }
+ ],
+ "n_sig_cls_flip": "80/110",
+ "n_sig_code_flip": "64/110",
+ "n_sig_code_code_diff": "89/110"
+}

@@ -1,0 +1,28 @@
+\begin{table}[t]
+    \centering
+    \small
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}lcccccccc@{}}
+        \toprule
+        & & \multicolumn{3}{c}{\textbf{Classification label flip}} & \multicolumn{2}{c}{\textbf{Code (all edits)}} & \multicolumn{2}{c}{\textbf{Control}} \\
+        \cmidrule(lr){3-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+        \textbf{Model} & \textbf{Params (B)} & Whitespace & Punctuation & All & changed & pass/fail flip & cls flip & code changed \\
+        \midrule
+        \qwentwo-0.5B & 0.5 & {\bf 16.2} & 3.7 & {\bf 10.6} & 47.8 & 6.3 & 0.0 & 5.2 \\
+        \qwenthree-0.6B & 0.6 & 7.1 & 3.8 & 5.6 & 40.4 & 6.0 & 0.0 & 20.9 \\
+        Llama-3.2-1B & 1.2 & 15.3 & 2.0 & 9.4 & 29.3 & 3.7 & 0.0 & 15.1 \\
+        \qwentwo-1.5B & 1.5 & 6.2 & 2.1 & 4.4 & 38.9 & 6.4 & 0.1 & 3.2 \\
+        \midrule
+        \qwentwo-3B & 3.1 & 4.9 & 2.0 & 3.6 & 45.1 & {\bf 7.6} & 0.0 & 4.3 \\
+        Llama-3.2-3B & 3.2 & 6.1 & 2.4 & 4.4 & 27.3 & 3.8 & 0.0 & 2.2 \\
+        \qwenthree-4B & 4.0 & 9.4 & {\bf 5.0} & 7.4 & 28.6 & 3.9 & 0.0 & 0.9 \\
+        \qwentwo-7B & 7.6 & 3.6 & 0.7 & 2.3 & 37.3 & 5.7 & 0.0 & 1.9 \\
+        Llama-3.1-8B & 8.0 & 3.4 & 0.8 & 2.2 & 29.5 & 4.3 & 0.0 & 2.4 \\
+        \qwenthree-8B & 8.2 & 2.6 & 0.7 & 1.8 & 26.5 & 2.9 & 0.2 & 8.0 \\
+        \qwentwo-14B & 14.8 & 2.9 & 0.6 & 1.9 & {\bf 49.1} & 6.0 & 0.0 & 7.1 \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Divergence (\%) per model. The horizontal rule separates small ($<$3B) from large ($\geq$3B) models. The highest value in each perturbation column is in bold. Whitespace exceeds punctuation for every model. Small models dominate classification flips, while code text changes show no size trend. Control columns show batch-position noise, which is negligible for labels but reaches 21\% of code outputs for \qwenthree-0.6B.}
+    \label{tab:per_model}
+\end{table}

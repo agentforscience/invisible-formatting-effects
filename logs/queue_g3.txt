@@ -1,0 +1,2 @@
+qwen3-4b
+qwen3-0.6b

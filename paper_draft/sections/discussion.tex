@@ -1,0 +1,46 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\para{Hypotheses revisited.}
+We started with four hypotheses.
+(H1) Invisible edits flip 5--15\% of labels. This is \emph{borderline}. The mean is 4.9\% \ci{4.6}{5.1}, just below the range. Small models fall inside it (7.5\%) and large models below it (3.4\%), and individual cells range from 0\% to 39\%.
+(H2) Punctuation edits are more disruptive than whitespace edits. This is \emph{refuted}. Whitespace edits flip 7.1\% of labels, inside the predicted 3--8\%, while punctuation edits flip only 2.2\%, far below the predicted 8--20\%.
+(H3) Models under 3B are 2--3$\times$ more sensitive. This is \emph{supported for classification} (2.2$\times$ overall, 2.9$\times$ within \qwentwo) but \emph{not for code} (1.14$\times$, not significant).
+(H4) Code is most affected, with 15--25\% output change. This is \emph{partly supported}. Code text changes more than predicted (36\%), but functional flips (5.1\%) match classification label flips (4.9\%).
+
+{\bf Why is whitespace worse than punctuation?}
+We see two mechanisms.
+The first is token footprint.
+Byte-level BPE tokenizers attach the leading space to the next word, so a double space or a no-break space changes the token of every word in the prompt (69 and 148 changed positions on average), while curly quotes touch a handful of tokens.
+The second mechanism operates even at a matched footprint.
+A trailing \texttt{\textbackslash n\textbackslash n} changes the last tokens before the assistant turn, the position that most directly conditions the first answer token.
+CRLF changes every line boundary the model uses to parse the prompt's structure.
+Typographic quotes and dashes, by contrast, are common in web pretraining text, and models appear to treat them as near-synonyms of their ASCII forms.
+The GEE results support this reading: controlling for edit size shrinks the punctuation--whitespace gap but does not close it.
+
+{\bf Why is code text so volatile but code correctness not?}
+A 512-token program has many places where an equally valid choice can differ, such as a variable name, a loop form or a blank line.
+Greedy decoding commits to one branch, and a small change in the prompt can tip an early near-tie.
+Most of these alternatives are equally correct, so 31\% of perturbed generations change text without changing test outcomes.
+The same reasoning explains the larger code noise floor: re-running an identical prompt in a different batch position already changes 6.2\% of code outputs, up to 21\% for \qwenthree-0.6B, but only 0.02\% of labels.
+Without this control, about a sixth of the code-change effect would be misattributed to formatting.
+
+\para{Implications for practice.}
+First, whitespace normalization matters more than punctuation normalization. Converting \texttt{\textbackslash r\textbackslash n} to \texttt{\textbackslash n}, replacing no-break spaces with spaces, collapsing repeated spaces and stripping trailing whitespace removes the most disruptive edits we tested.
+Second, a 2--5 point accuracy difference between two prompt variants on a small model can come from formatting alone. Evaluations should report results over several formattings and compare against an identical-prompt re-run.
+Third, chat templates silently normalize some formatting (Llama trims trailing whitespace) and not other formatting (\qwentwo keeps it), so the same raw input can be safe for one serving stack and fragile for another.
+Finally, because net accuracy barely moves, formatting is a source of variance in individual predictions rather than a systematic bias. This matters most for per-item consistency, such as when the same document is classified twice through different pipelines.
+
+\para{Limitations.}
+We test only open models up to 14.8B parameters, since no commercial API was available, and frontier models may behave differently.
+Most checkpoints are AWQ 4-bit, and quantization may itself add sensitivity. bf16 \qwenthree-8B is the least sensitive model, but it also differs in family and was served by a separate vLLM server, which raises its control noise.
+We use greedy decoding only, so we measure the deterministic component of the effect, not shifts in the sampling distribution.
+The edit set is a design choice. Two whitespace edits (\cond{double_space}, \cond{nbsp}) touch every word. Without them, whitespace flips 4.5\% of labels (mean of \cond{trailing_space}, \cond{crlf} and \cond{trailing_newlines}), still about twice the punctuation rate.
+Punctuation edits can only change the few quotes and dashes present, and a quote-heavy corpus could show larger effects. \cond{ellipsis_char} rarely applied.
+In code prompts, punctuation edits touch only docstrings and comments, so they are smaller than in classification prompts.
+Near-constant predictions from Llama-3.2-1B on \boolq and \qwenthree-0.6B on \agnews understate small-model sensitivity on those tasks.
+Finally, we use one prompt template per task, 400 items per classification task and 464 code problems, and other templates may be more or less fragile.
+
+\para{Broader impact.}
+Our findings help practitioners build more reliable evaluations and pipelines. They could also inform adversarial manipulation of model outputs through invisible characters.
+Because the effects we observe are mostly symmetric and concentrated on uncertain items, simple input normalization is an effective defence.

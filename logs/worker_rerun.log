@@ -1,0 +1,54 @@
+15:34:30 rerun-qwen2.5-0.5b: 0 done, 19968 to do, holding 3.5 GB
+(MainProcess pid=2787320) INFO 10-29 15:34:30 [api_utils.py:286] non-default args: {'seed': 42, 'max_model_len': 2048, 'enable_prefix_caching': False, 'gpu_memory_utilization': 0.06889352818371608, 'kv_cache_memory_bytes': 1288490188, 'max_num_batched_tokens': 2048, 'max_num_seqs': 128, 'disable_log_stats': True, 'enforce_eager': True, 'model': '/data/transformers/hub/models--Qwen--Qwen2.5-0.5B-Instruct-AWQ/snapshots/db09cd27ead7fee40cdee309693cf83601b9c899'}
+(MainProcess pid=2787320) WARNING 10-29 15:34:30 [arg_utils.py:1945] The global random seed is set to 42. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+(MainProcess pid=2787320) INFO 10-29 15:34:30 [model.py:733] Resolved architecture: Qwen2ForCausalLM
+(MainProcess pid=2787320) INFO 10-29 15:34:30 [model.py:2152] Using max model len 2048
+(MainProcess pid=2787320) INFO 10-29 15:34:30 [scheduler.py:307] Chunked prefill is enabled with max_num_batched_tokens=2048.
+(MainProcess pid=2787320) WARNING 10-29 15:34:30 [vllm.py:1703] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(MainProcess pid=2787320) WARNING 10-29 15:34:30 [vllm.py:1727] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(MainProcess pid=2787320) INFO 10-29 15:34:30 [kernel.py:467] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native'])
+(MainProcess pid=2787320) INFO 10-29 15:34:30 [vllm.py:1929] Cudagraph is disabled under eager mode
+(MainProcess pid=2787320) INFO 10-29 15:34:30 [compilation.py:317] Enabled custom fusions: norm_quant, act_quant
+(MainProcess pid=2787320) INFO 10-29 15:34:33 [core.py:133] Initializing a V1 LLM engine (v0.32.0) with config: model='/data/transformers/hub/models--Qwen--Qwen2.5-0.5B-Instruct-AWQ/snapshots/db09cd27ead7fee40cdee309693cf83601b9c899', speculative_config=None, tokenizer='/data/transformers/hub/models--Qwen--Qwen2.5-0.5B-Instruct-AWQ/snapshots/db09cd27ead7fee40cdee309693cf83601b9c899', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=2048, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=auto_awq, quantization_config=None, enforce_eager=True, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, custom_histogram_buckets=None, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=42, served_model_name=/data/transformers/hub/models--Qwen--Qwen2.5-0.5B-Instruct-AWQ/snapshots/db09cd27ead7fee40cdee309693cf83601b9c899, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'cudagraph_decoder_replay': True, 'decoder_replay_cudagraph_capture_sizes': [], 'decoder_replay_trim_threshold': 768, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_rocm_segmented_attn_autotune=False, enable_cutedsl_warmup=True, enable_jit_warmup=False, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)
+(MainProcess pid=2787320) INFO 10-29 15:34:33 [parallel_state.py:1906] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_6e698736513d47d696508e298283bb93 backend=nccl
+(MainProcess pid=2787320) INFO 10-29 15:34:34 [parallel_state.py:2350] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank N/A, EPLB rank N/A
+(MainProcess pid=2787320) INFO 10-29 15:34:34 [gpu_worker.py:518] Using V2 Model Runner
+(MainProcess pid=2787320) INFO 10-29 15:34:34 [model_runner.py:392] Loading model from scratch...
+(MainProcess pid=2787320) INFO 10-29 15:34:34 [__init__.py:923] Using MarlinLinearKernel for mixed-precision linear
+(MainProcess pid=2787320) INFO 10-29 15:34:34 [auto_awq.py:451] Using MarlinLinearKernel for AutoAWQMarlinLinearMethod
+(MainProcess pid=2787320) INFO 10-29 15:34:36 [cuda.py:506] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(MainProcess pid=2787320) INFO 10-29 15:34:36 [flash_attn.py:1117] Using FlashAttention version 2
+(MainProcess pid=2787320) INFO 10-29 15:34:36 [base_loader.py:82] Initializing model took 1.279438 seconds
+(MainProcess pid=2787320) INFO 10-29 15:34:36 [weight_utils.py:1108] Filesystem type for checkpoints: ZFS. Checkpoint size: 0.68 GiB. Available RAM: 107.85 GiB.
+(MainProcess pid=2787320) INFO 10-29 15:34:36 [weight_utils.py:1131] Auto-prefetch is disabled because the filesystem (ZFS) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:02<00:00,  2.32s/it]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:02<00:00,  2.33s/it]
+
+(MainProcess pid=2787320) INFO 10-29 15:34:38 [default_loader.py:501] Loading weights took 2.38 seconds
+(MainProcess pid=2787320) INFO 10-29 15:34:40 [model_runner.py:424] Model loading took 0.43 GiB memory and 5.976563 seconds
+(MainProcess pid=2787320) INFO 10-29 15:34:40 [topk_topp_sampler.py:96] FlashInfer top-p/top-k sampling disabled via VLLM_USE_FLASHINFER_SAMPLER=0.
+(MainProcess pid=2787320) INFO 10-29 15:34:40 [torch_utils.py:295] Reducing Torch threads from 16 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+(MainProcess pid=2787320) INFO 10-29 15:34:40 [utils.py:347] Using LBNHC KV cache layout.
+(MainProcess pid=2787320) INFO 10-29 15:34:40 [marlin_utils.py:679] Marlin kernel can achieve better performance for small size_n with experimental use_atomic_add feature. You can consider set environment variable VLLM_MARLIN_USE_ATOMIC_ADD to 1 if possible.
+(MainProcess pid=2787320) INFO 10-29 15:34:42 [gpu_worker.py:669] Initial free memory 5.68 GiB, reserved 1.2 GiB memory for KV Cache as specified by kv_cache_memory_bytes config and skipped memory profiling. This does not respect the gpu_memory_utilization config. Only use kv_cache_memory_bytes config when you want manual control of KV cache memory size. If OOM'ed, check the difference of initial free memory between the current run and the previous run where kv_cache_memory_bytes is suggested and update it correspondingly.
+(MainProcess pid=2787320) INFO 10-29 15:34:42 [kv_cache_utils.py:2327] GPU KV cache size: 104,848 tokens, Maximum concurrency for 2,048 tokens per request: 51.20x
+[rank0]:[W1029 15:34:42.373948594 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1289748480 bytes (free: 1246691328, total: 50899386368).
+(MainProcess pid=2787320) INFO 10-29 15:34:42 [core.py:402] init engine (profile, create kv cache, warmup model) took 2.29 s
+(MainProcess pid=2787320) INFO 10-29 15:34:43 [hf.py:648] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+15:34:46 rerun-qwen2.5-0.5b cls 1500/14400 4s
+15:34:50 rerun-qwen2.5-0.5b cls 3000/14400 7s
+15:34:53 rerun-qwen2.5-0.5b cls 4500/14400 10s
+15:34:56 rerun-qwen2.5-0.5b cls 6000/14400 14s
+15:35:00 rerun-qwen2.5-0.5b cls 7500/14400 17s
+15:35:03 rerun-qwen2.5-0.5b cls 9000/14400 21s
+15:35:07 rerun-qwen2.5-0.5b cls 10500/14400 24s
+15:35:10 rerun-qwen2.5-0.5b cls 12000/14400 27s
+15:35:14 rerun-qwen2.5-0.5b cls 13500/14400 31s
+15:35:16 rerun-qwen2.5-0.5b cls 14400/14400 33s
+15:35:48 rerun-qwen2.5-0.5b code 1500/5568 66s
+15:36:22 rerun-qwen2.5-0.5b code 3000/5568 100s
+15:36:57 rerun-qwen2.5-0.5b code 4500/5568 134s
+15:37:23 rerun-qwen2.5-0.5b code 5568/5568 160s
+15:37:24 done rerun-qwen2.5-0.5b; holding 3.5 GB
+15:37:24 queue empty

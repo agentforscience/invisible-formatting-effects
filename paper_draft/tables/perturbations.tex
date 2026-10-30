@@ -1,0 +1,28 @@
+\begin{table}[t]
+    \centering
+    \small
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llp{8.4cm}l@{}}
+        \toprule
+        \textbf{Family} & \textbf{Condition} & \textbf{Edit} & \textbf{Applies to} \\
+        \midrule
+        Control & \ctrl & Byte-identical to canonical, different batch position & all \\
+        \midrule
+        \multirow{6}{*}{Whitespace} & \cond{trailing_space} & Append a space to every line & all \\
+        & \cond{crlf} & Replace \texttt{\textbackslash n} with \texttt{\textbackslash r\textbackslash n} & all \\
+        & \cond{double_space} & Replace every single inter-word space with two spaces & all (code: prose only) \\
+        & \cond{trailing_newlines} & Append \texttt{\textbackslash n\textbackslash n} to the message & all \\
+        & \cond{nbsp} & Replace inter-word spaces with no-break space U+00A0 & classification \\
+        & \cond{tabs} & Replace 4-space indentation with a tab & \humaneval \\
+        \midrule
+        \multirow{5}{*}{Punctuation} & \cond{curly_quotes} & \texttt{"x"} $\rightarrow$ \textquotedblleft x\textquotedblright & all (code: prose only) \\
+        & \cond{curly_apostrophe} & \texttt{'} $\rightarrow$ \textquoteright\ / \textquoteleft & all (code: prose only) \\
+        & \cond{unicode_dash} & \texttt{~-~} $\rightarrow$ en dash, \texttt{--} $\rightarrow$ em dash, digit ranges $\rightarrow$ en dash & all (code: prose only) \\
+        & \cond{ellipsis_char} & \texttt{...} $\rightarrow$ U+2026 (\ldots) & 40 cls / 9 code prompts \\
+        & \cond{punct_all} & All four punctuation edits combined & all (code: prose only) \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{The ten invisible formatting edits plus the identical-prompt control. ``Prose only'' means the edit touches the instruction, docstrings and comments but never code tokens or doctest lines, so programs stay valid.}
+    \label{tab:perturbations}
+\end{table}

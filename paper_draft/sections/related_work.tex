@@ -1,0 +1,29 @@
+\section{Related Work}
+\label{sec:related}
+
+\para{Prompt-format sensitivity.}
+A growing body of work shows that LLM outputs depend on prompt details that should not matter.
+\citet{zhao2021calibrate} and \citet{lu2022fantastically} show that the choice and order of few-shot examples can swing accuracy from near chance to near state of the art.
+\citet{sclar2024quantifying} vary separators, casing and spacing between template fields and find accuracy differences of up to 76 points for LLaMA-2-13B.
+\citet{mizrahi2024state} show that model rankings change across paraphrased instructions and argue for multi-prompt evaluation.
+\citet{zhuo2024prosa} measure instance-level prompt sensitivity across models and link it to model confidence.
+These studies perturb \emph{visible} structure that a prompt designer chooses.
+Unlike them, we hold the visible prompt fixed and change only characters a reader cannot see or barely notices, and we separate whitespace from punctuation edits.
+
+\para{Character-level robustness.}
+Neural NLP models are known to be fragile under character noise.
+\citet{belinkov2018synthetic} show that synthetic and natural typos break machine translation, \citet{pruthi2019combating} show that single-character adversarial edits fool text classifiers, and toolkits such as TextFlint~\cite{wang2021textflint} bundle many such transformations.
+These edits are visible typos or adversarially chosen changes.
+Our edits are neither: they are the benign byte-level variation that ordinary software introduces, and none of them changes how the text reads.
+
+\para{Tokenization.}
+Byte-level BPE tokenizers~\cite{sennrich2016neural,radford2019language} fold a leading space into the following word token, so \texttt{"word"} and \texttt{"~word"} map to different ids, and an unusual space character changes the token of every word it precedes.
+This suggests a mechanism for whitespace sensitivity.
+We measure it directly by applying each model's chat template and tokenizer and counting the token positions an edit changes.
+We find that this token footprint explains part, but not all, of the gap between whitespace and punctuation.
+
+\para{Nondeterminism of inference.}
+Greedy decoding is often treated as deterministic, but batched GPU inference with engines such as vLLM~\cite{kwon2023efficient} can change outputs depending on batch composition, because floating-point reductions are not associative~\cite{atil2024llm}.
+Any sensitivity study that ignores this floor attributes noise to the perturbation.
+We include a byte-identical control condition for every item and report all effects against it.
+On code generation, this floor alone changes 6.2\% of outputs.

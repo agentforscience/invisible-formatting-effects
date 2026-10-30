@@ -1,0 +1,10 @@
+Text reaches language models with formatting the user never sees: Windows line endings, no-break spaces copied from web pages, trailing spaces, and typographic quotes and dashes from word processors.
+We ask whether such meaning-preserving edits change model outputs, and which kind matters more.
+We apply ten invisible whitespace and punctuation edits to three classification tasks and two code-generation tasks.
+We run 11 open models from 0.5B to 14.8B parameters with greedy decoding (239,616 generations), and we compare every edit against a byte-identical re-run of the same prompt.
+A single invisible edit flips 4.9\% of classification labels (95\% CI 4.6--5.1\%), while the identical re-run flips 0.02\%.
+Contrary to our hypothesis, whitespace edits flip 7.1\% of labels and punctuation edits only 2.2\%. Whitespace is more disruptive for every model and on both task types, and it stays more disruptive when we match the number of prompt tokens the edit changes.
+Models under 3B parameters flip labels 2.2$\times$ as often as larger ones (CI 2.0--2.4).
+For code, 36\% of generations change text under an edit, but only 5.1\% change their unit-test outcome, about the same rate as classification label flips.
+Net accuracy moves by less than 1 percentage point per model, because flips go in both directions and concentrate on items the model already gets wrong.
+Formatting therefore adds variance rather than bias. Practitioners should normalise whitespace before inference and report results over several formattings.

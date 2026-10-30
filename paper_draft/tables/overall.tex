@@ -1,0 +1,17 @@
+\begin{table}[t]
+    \centering
+    \small
+    \begin{tabular}{@{}llcccc@{}}
+        \toprule
+        \textbf{Task kind} & \textbf{Metric} & \textbf{Control} & \textbf{Whitespace} & \textbf{Punctuation} & \textbf{All edits} \\
+        \midrule
+        Classification & label flip & 0.02 & {\bf 7.07} & 2.17 & 4.88 \ci{4.61}{5.14} \\
+        (1,200 items) & raw text changed & 0.13 & {\bf 11.7} & 5.2 & -- \\
+        \midrule
+        Code & code changed & 6.2 & {\bf 47.6} & 22.6 & 35.7 \ci{34.2}{37.4} \\
+        (464 problems) & pass/fail flip & 0.61 & {\bf 7.17} & 2.79 & 5.08 \ci{4.69}{5.51} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Divergence from the canonical output (\%), averaged over items, models and conditions, with bootstrap 95\% CIs over items. Every edit family is far above the identical-prompt control, and whitespace (bold) exceeds punctuation on every metric. For classification flips, the punctuation $-$ whitespace difference is $-4.9$\pp \ci{$-5.2$}{$-4.6$}.}
+    \label{tab:overall}
+\end{table}
